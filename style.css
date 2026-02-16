@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins";
+}
+
+:root {
+  --main-color: rgb(122, 168, 255);
+  --text-color: #333333;
+  --bgcolor: rgb(201, 201, 201, .1);
+}
+
+h1, h2, p {
+  color: var(--text-color);
+}
+
+button {
+  font-size: 1em;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+body {
+  background-color: var(--bgcolor);
+  margin: 2em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4em;
+}
+
+.add-note-button {
+  padding: 15px;
+  color: white;
+  background-color: var(--main-color);
+}
+
+.add-note-button:hover {
+  opacity: .8;
+}
+
+.no-notes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.note-card {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.2);
+  border-radius: 10px;
+  padding: 25px;
+  transition: .2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.note-card:hover {
+  box-shadow: 0 0 20px rgba(151, 151, 151, 0.2);
+  scale: 1.01;
+}
+
+.note-card:hover .options {
+  visibility: visible;
+}
+
+.options {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.options button {
+  width: 30px;
+  height: 30px;
+  color: var(--text-color);
+}
+
+.options button:hover {
+  scale: 1.05;
+}
+
+.options button:nth-child(2):hover {
+  background-color: rgb(255, 68, 68);
+  color: white;
+}
+
+.modal {
+  width: 450px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.2);
+  padding: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal::backdrop {
+  backdrop-filter: blur(8px);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header i {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.modal-header i:hover {
+  scale: 1.1;
+}
+
+.modal-header h2 {
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+input, textarea {
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(151, 151, 151, 0.1);
+  resize: none;
+  transition: .2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--main-color);
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.modal button {
+  padding: 10px 20px;
+}
+
+.modal .action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+#cancel-button {
+  background-color: rgba(151, 151, 151, 0.1);
+}
+
+#save-button {
+  background-color: var(--main-color);
+  color: white;
+}
+
+#save-button:hover {
+  background-color: rgb(79, 140, 255);
+}

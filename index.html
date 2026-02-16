@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Quick Notes</h1>
+      <button class="add-note-button" onclick="openNoteModal()">+ Add Note</button>
+    </header>
+    <main class="notes-container" id="notesContainer">
+    </main>
+    <dialog class="modal" id="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add New Note</h2>
+        <i class='bx bx-x' id="closeIcon"></i>
+      </div>
+      <form id="noteForm">
+        <div class="form-group">
+          <label for="titleInput">Title</label>
+          <input id="titleInput" type="text" placeholder="Enter note title..." required/>
+        </div>
+        <div class="form-group">
+          <label for="contentInput">Content</label>
+          <textarea id="contentInput" placeholder="Write your notes here..." rows="4" required></textarea>
+        </div>
+        <div class="action-buttons">
+          <button type="button" id="cancel-button" onclick="closeNoteModal()">Cancel</button>
+          <button type="submit" id="save-button">Save Note</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
